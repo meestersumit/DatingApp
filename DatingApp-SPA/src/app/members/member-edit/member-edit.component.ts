@@ -16,6 +16,7 @@ export class MemberEditComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
 
   user: User;
+  photoUrl: string;
 
   //prevent the user from closing the brower window before clicking save changes button
   @HostListener('window:beforeunload', ['$event'])
@@ -36,6 +37,9 @@ export class MemberEditComponent implements OnInit {
     this.route.data.subscribe((data) => {
       this.user = data['user'];
     });
+    this.authService.currentPhotoUrl.subscribe((photoUrl) => {
+      this.photoUrl = photoUrl;
+    });
   }
 
   updateUser() {
@@ -50,5 +54,9 @@ export class MemberEditComponent implements OnInit {
           this.alertify.error(error);
         }
       );
+  }
+
+  updateMainPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
   }
 }
