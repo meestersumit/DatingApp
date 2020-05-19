@@ -35,6 +35,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     MemberDetailResolver,
     MemberEditResolver,
     MemberListResolver,
+    ListsResolver,
     { provide: HTTP_INTERCEPTORS, useClass: JwtHttpInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
