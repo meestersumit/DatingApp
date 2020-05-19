@@ -61,29 +61,19 @@ export class MemberDetailComponent implements OnInit {
 
   // EVENTS
   // callback on gallery opened
-  galleryOpened(index) {
-    console.info('Gallery opened at index ', index);
-  }
+  galleryOpened(index) {}
 
   // callback on gallery closed
-  galleryClosed() {
-    console.info('Gallery closed.');
-  }
+  galleryClosed() {}
 
   // callback on gallery image clicked
-  galleryImageClicked(index) {
-    console.info('Gallery image clicked with index ', index);
-  }
+  galleryImageClicked(index) {}
 
   // callback on gallery image changed
-  galleryImageChanged(index) {
-    console.info('Gallery image changed to index ', index);
-  }
+  galleryImageChanged(index) {}
 
   // callback on user clicked delete button
-  deleteImage(index) {
-    console.info('Delete image at index ', index);
-  }
+  deleteImage(index) {}
 
   constructor(
     private userService: UserService,
@@ -99,7 +89,6 @@ export class MemberDetailComponent implements OnInit {
   }
 
   getImages() {
-    console.log('hit getImages');
     const imageUrls = [];
     for (const photo of this.user.photos) {
       imageUrls.push({
@@ -111,17 +100,4 @@ export class MemberDetailComponent implements OnInit {
     }
     return imageUrls;
   }
-
-  // loadUser() {
-  //   this.userService
-  //     .getUser(+this.route.snapshot.params['id']) //+ for converting string to number
-  //     .subscribe(
-  //       (user: User) => {
-  //         this.user = user;
-  //       },
-  //       (error) => {
-  //         this.alertify.error(error);
-  //       }
-  //     );
-  // }
 }
