@@ -36,6 +36,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { ListsResolver } from './_resolvers/lists.resolver';
     MemberEditComponent,
     PhotoEditorComponent,
     DateAgoPipe,
+    MemberMessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ import { ListsResolver } from './_resolvers/lists.resolver';
     MemberEditResolver,
     MemberListResolver,
     ListsResolver,
+    MessagesResolver,
     { provide: HTTP_INTERCEPTORS, useClass: JwtHttpInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

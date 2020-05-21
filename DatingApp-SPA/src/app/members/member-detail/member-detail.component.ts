@@ -8,6 +8,9 @@ import {
   GALLERY_IMAGE,
   GALLERY_CONF,
 } from 'ngx-image-gallery';
+import { TabsetComponent } from 'ngx-bootstrap/tabs/public_api';
+// import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
+// import { TabsetComponent } from 'ngx-bootstrap/tabs/ngx-bootstrap-tabs';
 
 @Component({
   selector: 'app-member-detail',
